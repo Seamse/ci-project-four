@@ -75,6 +75,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'doings.wsgi.application'
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-seamse-ciprojectfour-86bghq6htsv.ws-eu46.gitpod.io', ]
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
