@@ -44,3 +44,10 @@ def edit_name(request, list_id):
         'form': form
     }
     return render(request, "edit_name.html", context)
+
+
+def list_status(request, list_id):
+    list = get_object_or_404(List, id=list_id)
+    list.done = not list.done
+    list.save()
+    return redirect('home')

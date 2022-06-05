@@ -23,4 +23,5 @@ urlpatterns = [
     path('add', views.add_list, name='add'),
     path('edit/<list_id>', views.edit, name='edit'),
     path('edit_name/<list_id>', views.edit_name, name='edit_name'),
+    path('list_status/<list_id>', views.list_status, name='list_status'),
 ]

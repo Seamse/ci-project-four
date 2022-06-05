@@ -9,14 +9,14 @@
                     <strike><h1 class="fw-bold">{{ list.name }}</h1></strike>
                     <p>tasks</p>
                     <hr>
-                    <a class="btn btn-outline-warning btn-m" href="">Mark as undone</a>
+                    <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as undone</a>
                 {% else %}
                     <h1 class="fw-bold">{{ list.name }}</h1>
                     <p>tasks</p>
                     <hr>
                     <a class="btn btn-outline-primary btn-m" href="/edit_name/{{ list.id }}">Edit name</a>
                     <a class="btn btn-outline-success btn-m" href="">Add task</a>
-                    <a class="btn btn-outline-warning btn-m" href="">Mark as done</a>
+                    <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as done</a>
                 {% endif %}
                 <a class="btn btn-outline-danger btn-m" href="">Delete list</a>
             </div>
