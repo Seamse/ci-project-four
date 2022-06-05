@@ -5,4 +5,4 @@ from errands import models
 class NewListForm(forms.ModelForm):
     class Meta:
         model = models.List
-        fields = ['name', 'done']
+        fields = ['name']

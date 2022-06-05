@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- Page Content -->
+<section class="py-5">
+    <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
+            <div class="m-4 m-lg-5">
+                {% if list.done %}
+                    <strike><h1 class="fw-bold">{{ list.name }}</h1></strike>
+                    <p>tasks</p>
+                    <hr>
+                    <a class="btn btn-outline-warning btn-m" href="">Mark as undone</a>
+                {% else %}
+                    <h1 class="fw-bold">{{ list.name }}</h1>
+                    <p>tasks</p>
+                    <hr>
+                    <a class="btn btn-outline-primary btn-m" href="">Edit name</a>
+                    <a class="btn btn-outline-success btn-m" href="">Add task</a>
+                    <a class="btn btn-outline-warning btn-m" href="">Mark as done</a>
+                {% endif %}
+                <a class="btn btn-outline-danger btn-m" href="">Delete list</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

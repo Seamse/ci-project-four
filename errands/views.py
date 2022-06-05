@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from errands import forms
 from .models import List
 
@@ -22,3 +22,11 @@ def add_list(request):
         'form': form
     }
     return render(request, "add_list.html", context)
+
+
+def edit(request, list_id):
+    list = get_object_or_404(List, id=list_id)
+    context = {
+        'list': list
+    }
+    return render(request, 'edit_redirect.html', context)
