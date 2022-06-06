@@ -51,3 +51,9 @@ def list_status(request, list_id):
     list.done = not list.done
     list.save()
     return redirect('home')
+
+
+def delete_list(request, list_id):
+    list = get_object_or_404(List, id=list_id)
+    list.delete()
+    return redirect('home')
