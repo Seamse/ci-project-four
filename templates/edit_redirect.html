@@ -9,7 +9,7 @@
                 <strike>
                     <h1 class="fw-bold">{{ list.name }}</h1>
                 </strike>
-                {% for task in list.tasks.all %}
+                {% for task in list.tasks.all|dictsort:"name" %}
                 <strike>
                     <p>{{ task.name }}</p>
                 </strike>
@@ -18,7 +18,7 @@
                 <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as undone</a>
                 {% else %}
                 <h1 class="fw-bold">{{ list.name }}</h1>
-                {% for task in list.tasks.all %}
+                {% for task in list.tasks.all|dictsort:"name" %}
                 <div class="container">
                     <div class="row">
                         <div class="col-lg">

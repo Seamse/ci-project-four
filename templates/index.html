@@ -28,7 +28,7 @@
                         <strike>
                             <h2 class="fs-4 fw-bold">{{ list.name }}</h2>
                         </strike>
-                        {% for task in list.tasks.all %}
+                        {% for task in list.tasks.all|dictsort:"name" %}
                         <strike>
                             <p class="mb-0">{{ task.name }}</p>
                         </strike>
@@ -38,7 +38,7 @@
                                 class="btn btn-primary btn-lg" href="/edit/{{ list.id }}"><i
                                     class="bi bi-pencil"></i></a></div>
                         <h2 class="fs-4 fw-bold">{{ list.name }}</h2>
-                        {% for task in list.tasks.all %}
+                        {% for task in list.tasks.all|dictsort:"name" %}
                         {% if task.done %}
                         <strike>
                             <p class="mb-0">{{ task.name }}</p>
