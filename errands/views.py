@@ -57,3 +57,16 @@ def delete_list(request, list_id):
     list = get_object_or_404(List, id=list_id)
     list.delete()
     return redirect('home')
+
+
+def add_task(request):
+    if request.method == "POST":
+        form = forms.TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('home')
+    form = forms.TaskForm()
+    context = {
+        'form': form
+    }
+    return render(request, "add_task.html", context)
