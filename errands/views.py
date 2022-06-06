@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from errands import forms
-from .models import List
+from .models import List, Task
 
 
 def home(request):
@@ -70,3 +70,9 @@ def add_task(request):
         'form': form
     }
     return render(request, "add_task.html", context)
+
+
+def delete_task(request, task_id):
+    task = get_object_or_404(Task, id=task_id)
+    task.delete()
+    return redirect('home')

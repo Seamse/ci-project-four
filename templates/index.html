@@ -27,14 +27,17 @@
                         <strike>
                             <h2 class="fs-4 fw-bold">{{ list.name }}</h2>
                         </strike>
+                        {% for task in list.tasks.all %}
+                        <strike><p class="mb-0">{{ task.name }}</p></strike>
+                        {% endfor %}
                         {% else %}
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4"><a
                             class="btn btn-primary btn-lg" href="/edit/{{ list.id }}"><i class="bi bi-pencil"></i></a></div>
                         <h2 class="fs-4 fw-bold">{{ list.name }}</h2>
-                        {% endif %}
                         {% for task in list.tasks.all %}
                         <p class="mb-0">{{ task.name }}</p>
                         {% endfor %}
+                        {% endif %}
                     </div>
                 </div>
             </div>

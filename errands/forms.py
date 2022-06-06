@@ -9,7 +9,7 @@ class ListForm(forms.ModelForm):
 
 
 class TaskForm(forms.ModelForm):
-    list = forms.ModelChoiceField(queryset=models.List.objects.all())
+    list = forms.ModelChoiceField(queryset=models.List.objects.all(), initial=models.List.name)
 
     class Meta:
         model = models.Task
