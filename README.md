@@ -20,17 +20,17 @@
 ## Features  
 ### Existing features
 *  A new user will be welcomed by the general welcome screen.  
-![welcome image](static/images/welcome.jpg)  
+![welcome image](media/images/welcome.jpg)  
 
 * New users will be offered the option to either sign up or login.  
 * Once logged in the user will be welcomed into their personal list overview.  
-![Home page](static/images/home.jpg)  
+![Home page](media/images/home.jpg)  
 
 * The user can add new lists on the main page and edit list names, add tasks, mark lists or tasks as finished and delete tasks or lists on the edit page.  
-![Edit page](static/images/detail.jpg)  
+![Edit page](media/images/detail.jpg)  
 
 * Although tasks can be deleted directly, there is a safety feature to ensure a user really wants to delete a complete list before deletion.  
-![Delete popup](static/images/delete.jpg)  
+![Delete popup](media/images/delete.jpg)  
 
 ### Potential future features  
 * Add deadlines to tasks
@@ -51,7 +51,7 @@ I have manually tested this project by doing the following:
 * Passed the code through a [Pep8](http://pep8online.com/) linter and confirmed there are no problems.
 * Create random test lists, tasks and users.
 * Pass the lighthouse test in developer tools:  
-![Lighthouse](static/images/lighthouse.jpg)  
+![Lighthouse](media/images/lighthouse.jpg)  
 
 ### User testing:
 * As a user I can create an account:  
