@@ -21,7 +21,7 @@
                 {% for task in list.tasks.all|dictsort:"name" %}
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg">
+                        <div class="col-sm">
                             {% if task.done %}
                             <strike>{{ task.name }}</strike>
                             {% else %}
@@ -40,7 +40,7 @@
                 {% endfor %}
                 <hr>
                 <a class="btn btn-outline-primary btn-m" href="/edit_name/{{ list.id }}">Edit name</a>
-                <a class="btn btn-outline-success btn-m" href="/add_task">Add task</a>
+                <a class="btn btn-outline-success btn-m" href="/add_task/{{ list.id }}">Add task</a>
                 <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as done</a>
                 {% endif %}
                 <button type="button" class="btn btn-outline-danger btn-m" data-toggle="modal"

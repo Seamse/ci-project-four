@@ -46,7 +46,7 @@ def edit_name(request, list_id):
         form = forms.ListForm(request.POST, instance=list)
         if form.is_valid():
             form.save()
-        return redirect('home')
+        return redirect(f'/edit/{list_id}')
     form = forms.ListForm(instance=list)
     context = {
         'form': form
@@ -67,12 +67,13 @@ def delete_list(request, list_id):
     return redirect('home')
 
 
-def add_task(request):
+def add_task(request, list_id):
+    list = get_object_or_404(List, id=list_id)
     if request.method == "POST":
         form = forms.TaskForm(request.POST)
         if form.is_valid():
             form.save()
-        return redirect('home')
+        return redirect(f'/edit/{list_id}')
     form = forms.TaskForm()
     context = {
         'form': form
