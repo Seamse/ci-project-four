@@ -23,7 +23,9 @@ def add_list(request):
     if request.method == "POST":
         form = forms.ListForm(request.POST)
         if form.is_valid():
-            form.save()
+            list = form.save(commit=False)
+            list.user = request.user
+            list.save()
         return redirect('home')
     form = forms.ListForm()
     context = {
