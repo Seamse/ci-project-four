@@ -53,7 +53,7 @@ def list_status(request, list_id):
     list = get_object_or_404(List, id=list_id)
     list.done = not list.done
     list.save()
-    return redirect('home')
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 def delete_list(request, list_id):
@@ -78,14 +78,14 @@ def add_task(request):
 def delete_task(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     task.delete()
-    return redirect('home')
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 def task_status(request, task_id):
     task = get_object_or_404(Task, id=task_id)
     task.done = not task.done
     task.save()
-    return redirect('home')
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 def edit_task(request, task_id):
