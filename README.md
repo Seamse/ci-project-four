@@ -50,6 +50,8 @@
 I have manually tested this project by doing the following:  
 * Passed the code through a [Pep8](http://pep8online.com/) linter and confirmed there are no problems.
 * Create random test lists, tasks and users.
+* Pass the lighthouse test in developer tools:  
+![Lighthouse](static/images/lighthouse.jpg)  
 
 ### User testing:
 * As a user I can create an account:  
