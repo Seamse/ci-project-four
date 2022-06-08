@@ -6,8 +6,14 @@
         <div class="p-4 p-lg-5 bg-light rounded-3 text-center">
             <div class="m-4 m-lg-5">
                 <h1 class="display-5 fw-bold">Welcome!</h1>
+                {% if user.is_authenticated %}
                 <p class="fs-4">Please review, edit or add to your lists below</p>
                 <a class="btn btn-primary btn-lg" href="/add"><i class="bi bi-plus"></i>Add list</a>
+                {% else %}
+                <p class="fs-4">Errand Doings is here to help you clear your head</p>
+                <a class="btn btn-primary btn-lg" href="/register">Sign Up</a>
+                <a class="btn btn-primary btn-lg" href="/login">Login</a>
+                {% endif %}
             </div>
         </div>
     </div>
