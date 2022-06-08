@@ -103,7 +103,8 @@ The deployed version can be found here: [Errand Doings](https://errand-doings.he
 
 ## Credits
 [Code Institute](https://www.codeinstitute.net)  
-My mentor [5pence](https://github.com/5pence)
+My mentor [5pence](https://github.com/5pence)  
+[Bootstrap Template](https://startbootstrap.com/template/heroic-features)
 
 Useful pages were:  
 [Slack](https//:www.slack.com)  
