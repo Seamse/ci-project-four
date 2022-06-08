@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- Page Content -->
+<section class="py-5">
+    <div class="container px-lg-5">
+        <div class="p-4 p-lg-5 bg-light rounded-3">
+            <div class="m-4 m-lg-5">
+                <h1 class="fw-bold text-center">Login</h1>
+                <hr>
+                <form action="add" method="POST">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <button type="submit" class="btn btn-outline-primary btn-m">Login</button>
+                </form>
+                <br>
+                <p class="text-center">Don't have an account? <a href="/register">Create an account</a> instead.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

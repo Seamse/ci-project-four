@@ -29,4 +29,7 @@ urlpatterns = [
     path('delete_task/<task_id>', views.delete_task, name='delete_task'),
     path('task_status/<task_id>', views.task_status, name='task_status'),
     path('edit_task/<task_id>', views.edit_task, name='edit_task'),
+    path('register', views.register, name='register'),
+    path('login', views.login_request, name='login'),
+    path('logout', views.logout_request, name='logout'),
 ]
