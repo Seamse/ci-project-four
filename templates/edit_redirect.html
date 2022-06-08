@@ -17,19 +17,26 @@
                 <hr>
                 <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as undone</a>
                 {% else %}
-                <h1 class="fw-bold">{{ list.name }}</h1>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <h1 class="fw-bold">{{ list.name }}</h1>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
                 {% for task in list.tasks.all|dictsort:"name" %}
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm">
+                        <div class="col-lg-9">
                             {% if task.done %}
                             <strike>{{ task.name }}</strike>
                             {% else %}
                             {{ task.name }}
                             {% endif %}
                         </div>
-                        <div class="col-sm-auto">
-                            <a class="btn btn-outline-primary btn-sm" href="/edit_task/{{ task.id }}"><i class="bi bi-pencil"></i></a>
+                        <div class="col-sm">
+                            <a class="btn btn-outline-primary btn-sm" href="/edit_task/{{ task.id }}"><i
+                                    class="bi bi-pencil"></i></a>
                             <a class="btn btn-outline-primary btn-sm" href="/task_status/{{ task.id }}"><i
                                     class="bi bi-check2-all"></i></a>
                             <a class="btn btn-outline-secondary btn-sm" href="/delete_task/{{ task.id }}"><i
@@ -39,12 +46,18 @@
                 </div>
                 {% endfor %}
                 <hr>
-                <a class="btn btn-outline-primary btn-m" href="/edit_name/{{ list.id }}">Edit name</a>
-                <a class="btn btn-outline-success btn-m" href="/add_task/{{ list.id }}">Add task</a>
-                <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as done</a>
-                {% endif %}
-                <button type="button" class="btn btn-outline-danger btn-m" data-toggle="modal"
-                    data-target="#deleteModal">Delete list</button>
+                <div class="row">
+                    <div class="col-lg-9">
+                        <a class="btn btn-outline-primary btn-m" href="/edit_name/{{ list.id }}">Edit name</a>
+                        <a class="btn btn-outline-success btn-m" href="/add_task/{{ list.id }}">Add task</a>
+                        <a class="btn btn-outline-warning btn-m" href="/list_status/{{ list.id }}">Mark as done</a>
+                        {% endif %}
+                        <button type="button" class="btn btn-outline-danger btn-m" data-toggle="modal"
+                            data-target="#deleteModal">Delete list</button>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
