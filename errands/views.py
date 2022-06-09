@@ -77,6 +77,7 @@ def add_task(request, list_id):
             form.save()
         return redirect(f'/edit/{list_id}')
     form = forms.TaskForm()
+    form.fields['list'].queryset = List.objects.filter(user=request.user)
     context = {
         'form': form
     }
@@ -96,14 +97,15 @@ def task_status(request, task_id):
     return redirect(request.META.get('HTTP_REFERER'))
 
 
-def edit_task(request, task_id):
+def edit_task(request, list_id, task_id):
     task = get_object_or_404(Task, id=task_id)
     if request.method == "POST":
         form = forms.TaskForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
-        return redirect('home')
+        return redirect(f'/edit/{list_id}')
     form = forms.TaskForm(instance=task)
+    form.fields['list'].queryset = List.objects.filter(user=request.user)
     context = {
         'form': form
     }
