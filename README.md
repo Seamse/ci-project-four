@@ -103,6 +103,8 @@ The deployed version can be found here: [Errand Doings](https://errand-doings.he
 
 ## Credits
 [Code Institute](https://www.codeinstitute.net)  
+[Code Institute's Hello Django Project](https://github.com/Seamse/hello-django)  
+[Code Institute's Task Manager Project](https://github.com/Seamse/task-manager)  
 My mentor [5pence](https://github.com/5pence)  
 [Bootstrap Template](https://startbootstrap.com/template/heroic-features)
 
